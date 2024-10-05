@@ -3,8 +3,9 @@
 set -e
 
 bw config server ${BW_HOST}
+bw login --apikey
 
-export BW_SESSION=$(bw login ${BW_USER} --passwordenv BW_PASSWORD --raw)
+export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
 
 bw unlock --check
 
